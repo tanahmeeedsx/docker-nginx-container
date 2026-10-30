@@ -1,4 +1,4 @@
-# Docker Nginx Container
+<h1 align="center">Docker Nginx Container</h1>
 
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx logo" width="120">
