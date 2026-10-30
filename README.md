@@ -1,35 +1,110 @@
-# Docker Nginx HTML Project 🚀
+# Docker Nginx Container
 
-A simple, lightweight, and beginner-friendly project demonstrating how to containerize a static HTML website using **Docker** and serve it via **Nginx** web server.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/docker-library/docs/master/nginx/logo.png" alt="Nginx logo" width="180">
+</p>
 
----
+<p align="center">
+  A simple project demonstrating how to serve a custom static HTML website with Nginx inside a Docker container.
+</p>
 
-## 📋 Table of Contents
-- [About the Project](#-about-the-project)
-- [Prerequisites](#-prerequisites)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-  - [1. Clone the Repository](#1-clone-the-repository)
-  - [2. Build the Docker Image](#2-build-the-docker-image)
-  - [3. Run the Docker Container](#3-run-the-docker-container)
-- [How to Access the Website](#-how-to-access-the-website)
-- [Stopping and Cleaning Up](#-stopping-and-cleaning-up)
-- [Author](#-author)
+<p align="center">
+  <img src="https://img.shields.io/badge/Docker-Containerization-2496ED?logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/Nginx-Web%20Server-009639?logo=nginx&logoColor=white" alt="Nginx">
+  <img src="https://img.shields.io/badge/HTML-Static%20Website-E34F26?logo=html5&logoColor=white" alt="HTML">
+</p>
 
 ---
 
-## 🌟 About the Project
+## Project Overview
 
-This project is designed for developers who want to learn the basics of Docker containerization by deploying a static HTML page on an Nginx web server. Instead of installing Nginx directly on your local machine, Docker packages the application and its dependencies into an isolated container, ensuring it runs smoothly across any environment.
+This beginner-friendly project packages a custom HTML page into a Docker image and serves it through the Nginx web server. It demonstrates the basic workflow of building an image, running a container, and accessing a website through a browser.
 
----
+## Technologies Used
 
-## 🛠️ Prerequisites
+- **Docker** – Builds and runs the application container.
+- **Nginx** – Serves the static website.
+- **HTML** – Provides the website content.
 
-Before you begin, make sure you have the following installed on your system:
-- **Docker**: [Download & Install Docker](https://www.docs.docker.com/get-started/)
-- **Git**: (Optional, for cloning the repository)
+## Architecture
 
-You can verify your Docker installation by running this command in your terminal:
+```text
+index.html + Dockerfile
+        |
+        v
+  Docker Image
+        |
+        v
+ Docker Container
+        |
+        v
+ Nginx Web Server
+        |
+        v
+ http://localhost:8081
+```
+
+## Project Structure
+
+```text
+docker-nginx-container/
+├── Dockerfile
+├── index.html
+└── README.md
+```
+
+## Getting Started
+
+### 1. Clone the Repository
+
 ```bash
-docker --version
+git clone https://github.com/tanahmeeedsx/docker-nginx-container.git
+cd docker-nginx-container
+```
+
+### 2. Build the Docker Image
+
+```bash
+docker build -t nginx-html .
+```
+
+### 3. Run the Container
+
+```bash
+docker run -d --name nginx-html-container -p 8081:80 nginx-html
+```
+
+### 4. Access the Website
+
+Open the following address in your browser:
+
+**http://localhost:8081**
+
+The host port `8081` is mapped to Nginx's container port `80`.
+
+## Useful Docker Commands
+
+| Command | Description |
+| --- | --- |
+| `docker images` | List available images |
+| `docker ps` | List running containers |
+| `docker ps -a` | List all containers |
+| `docker logs nginx-html-container` | View container logs |
+| `docker stop nginx-html-container` | Stop the container |
+| `docker start nginx-html-container` | Start the container |
+| `docker rm -f nginx-html-container` | Remove the container |
+
+## Key Learnings
+
+- Writing a basic Dockerfile using an official Nginx image.
+- Copying custom HTML content into the Nginx web root.
+- Building a Docker image and running a container.
+- Publishing a container port to access a website locally.
+
+## Author
+
+**Tanjim Ahmed**
+
+- GitHub: [@tanahmeeedsx](https://github.com/tanahmeeedsx)
+
+---
