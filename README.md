@@ -1,7 +1,7 @@
 # Docker Nginx Container
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/docker-library/docs/master/nginx/logo.png" alt="Nginx logo" width="180">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx logo" width="120">
 </p>
 
 <p align="center">
